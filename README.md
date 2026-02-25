@@ -56,6 +56,32 @@ Click **Save script** to create or update the script. Use **Edit** in the popup 
 
 ---
 
+## When does my script run?
+
+Scripts are run at **document idle** by default (after the DOM is ready, before or around the time the full page has loaded). If you need your code to run **after the page has fully finished loading** (including images and other resources), wrap it in the `load` event:
+
+```javascript
+window.addEventListener('load', function () {
+  // Your code here runs after the page has fully loaded.
+  console.log('Page fully loaded');
+});
+```
+
+You can also wait for `document.readyState === 'complete'` if the page might already be loaded when the script runs:
+
+```javascript
+function runAfterLoad() {
+  // Your code here
+}
+if (document.readyState === 'complete') {
+  runAfterLoad();
+} else {
+  window.addEventListener('load', runAfterLoad);
+}
+```
+
+---
+
 ## Example: Hello World overlay
 
 Here's a minimal script that shows a "Hello World" overlay on the target site. Add it as a new script and set a match pattern (e.g. `*://example.com/*` or `*://*/*` to try it on any page).
