@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pimp my Website – Options</title>
+  <link rel="stylesheet" href="styles/options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Pimp my Website</h1>
+      <a href="#" id="back-link">← Back to popup</a>
+    </header>
+    <main>
+      <form id="script-form">
+        <input type="hidden" id="script-id" name="id">
+        <div class="field">
+          <label for="script-name">Script name</label>
+          <input type="text" id="script-name" name="name" required placeholder="My script">
+        </div>
+        <div class="field">
+          <label for="script-matches">Match patterns (one per line)</label>
+          <textarea id="script-matches" name="matches" rows="3" placeholder="*://*.example.com/*&#10;*://*.google.com/*"></textarea>
+          <span class="hint">Chrome match patterns, e.g. *://*.example.com/*</span>
+        </div>
+        <div class="field">
+          <label for="script-code">JavaScript code</label>
+          <textarea id="script-code" name="code" rows="12" required placeholder="// Your script runs on matching pages&#10;console.log('Pimp my Website!');"></textarea>
+        </div>
+        <div class="field checkbox">
+          <label>
+            <input type="checkbox" id="script-enabled" name="enabled" checked>
+            Script enabled
+          </label>
+        </div>
+        <div class="actions">
+          <button type="submit" class="primary">Save script</button>
+          <button type="button" id="cancel-btn">Cancel</button>
+        </div>
+      </form>
+      <section id="script-list-section">
+        <h2>Your scripts</h2>
+        <ul id="script-list"></ul>
+      </section>
+    </main>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

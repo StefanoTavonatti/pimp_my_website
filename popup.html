@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pimp my Website</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <h1>Pimp my Website</h1>
+  <div class="toolbar">
+    <button type="button" class="primary" id="add-script">Add script</button>
+    <button type="button" id="options-btn">Options</button>
+  </div>
+  <ul class="script-list" id="script-list"></ul>
+  <div class="user-scripts-warning" id="user-scripts-warning" hidden>
+    Enable "Allow User Scripts" for this extension on
+    <a href="#" id="extensions-link">chrome://extensions</a>
+    so your scripts can run.
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

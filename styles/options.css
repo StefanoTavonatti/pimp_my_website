@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  color: #24292f;
+  background: #f6f8fa;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #d0d7de;
+}
+
+h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#back-link {
+  color: #0969da;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+#back-link:hover {
+  text-decoration: underline;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.field input[type="text"],
+.field textarea {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.field .hint {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #57606a;
+}
+
+.field.checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.field.checkbox input {
+  width: auto;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.actions button {
+  padding: 8px 16px;
+  font-size: 13px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background: #f6f8fa;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background: #eaeef2;
+}
+
+.actions button.primary {
+  background: #238636;
+  color: #fff;
+  border-color: #238636;
+}
+
+.actions button.primary:hover {
+  background: #2ea043;
+}
+
+#script-list-section {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #d0d7de;
+}
+
+#script-list-section h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#script-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#script-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+#script-list li .name {
+  font-weight: 500;
+}
+
+#script-list li .matches {
+  font-size: 12px;
+  color: #57606a;
+  margin-top: 2px;
+}
+
+#script-list li a {
+  color: #0969da;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+#script-list li a:hover {
+  text-decoration: underline;
+}
