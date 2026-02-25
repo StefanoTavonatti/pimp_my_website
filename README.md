@@ -119,37 +119,45 @@ Here's a minimal script that shows a "Hello World" overlay on the target site. A
 
 This script finds a DOM node with an XPath expression, reads its value, then edits that node. Adjust the XPath to match your target page (e.g. a heading, input, or span).
 
-**JavaScript code:**
+**JavaScript code (runs after page load):**
 
 ```javascript
 (function () {
-  // XPath to locate the element (example: first h1 on the page)
-  var xpath = "//h1[1]";
+  function run() {
+    // XPath to locate the element (example: first h1 on the page)
+    var xpath = "//h1[1]";
 
-  var result = document.evaluate(
-    xpath,
-    document,
-    null,
-    XPathResult.FIRST_ORDERED_NODE_TYPE,
-    null
-  );
-  var node = result.singleNodeValue;
+    var result = document.evaluate(
+      xpath,
+      document,
+      null,
+      XPathResult.FIRST_ORDERED_NODE_TYPE,
+      null
+    );
+    var node = result.singleNodeValue;
 
-  if (!node) {
-    console.warn("Pimp my Website: No element found for XPath:", xpath);
-    return;
+    if (!node) {
+      console.warn("Pimp my Website: No element found for XPath:", xpath);
+      return;
+    }
+
+    // Get the current value (text for elements, value for inputs)
+    var currentValue = node.value !== undefined ? node.value : node.textContent;
+    console.log("Pimp my Website: Current value:", currentValue);
+
+    // Edit the object: set new text or value
+    var newText = currentValue + " (modified by Pimp my Website)";
+    if (node.value !== undefined) {
+      node.value = newText;
+    } else {
+      node.textContent = newText;
+    }
   }
 
-  // Get the current value (text for elements, value for inputs)
-  var currentValue = node.value !== undefined ? node.value : node.textContent;
-  console.log("Pimp my Website: Current value:", currentValue);
-
-  // Edit the object: set new text or value
-  var newText = currentValue + " (modified by Pimp my Website)";
-  if (node.value !== undefined) {
-    node.value = newText;
+  if (document.readyState === "complete") {
+    run();
   } else {
-    node.textContent = newText;
+    window.addEventListener("load", run);
   }
 })();
 ```
