@@ -15,6 +15,7 @@
     <main>
       <form id="script-form">
         <input type="hidden" id="script-id" name="id">
+        <input type="hidden" id="script-group-id" name="group-id">
         <div class="field">
           <label for="script-name">Script name</label>
           <input type="text" id="script-name" name="name" required placeholder="My script">
@@ -27,6 +28,13 @@
         <div class="field">
           <label for="script-code">JavaScript code</label>
           <textarea id="script-code" name="code" rows="12" required placeholder="// Your script runs on matching pages&#10;console.log('Pimp my Website!');"></textarea>
+        </div>
+        <div class="field">
+          <label for="script-group">Group (optional)</label>
+          <select id="script-group" name="group">
+            <option value="">— None —</option>
+          </select>
+          <span class="hint">Scripts in a group run randomly (one per page load)</span>
         </div>
         <div class="field checkbox">
           <label>
@@ -42,6 +50,32 @@
       <section id="script-list-section">
         <h2>Your scripts</h2>
         <ul id="script-list"></ul>
+      </section>
+      <section id="group-section">
+        <h2>Script groups</h2>
+        <form id="group-form">
+          <input type="hidden" id="group-id" name="id">
+          <div class="field">
+            <label for="group-name">Group name</label>
+            <input type="text" id="group-name" name="name" required placeholder="My A/B group">
+          </div>
+          <div class="field">
+            <label for="group-matches">Match patterns (one per line)</label>
+            <textarea id="group-matches" name="matches" rows="3" placeholder="*://*.example.com/*"></textarea>
+            <span class="hint">These patterns determine where the group runs</span>
+          </div>
+          <div class="field checkbox">
+            <label>
+              <input type="checkbox" id="group-enabled" name="enabled" checked>
+              Group enabled
+            </label>
+          </div>
+          <div class="actions">
+            <button type="submit" class="primary">Save group</button>
+            <button type="button" id="cancel-group-btn">Cancel</button>
+          </div>
+        </form>
+        <ul id="group-list"></ul>
       </section>
     </main>
   </div>

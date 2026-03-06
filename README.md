@@ -188,8 +188,40 @@ Examples:
 
 ---
 
+## Script Groups (A/B testing)
+
+Groups let you bundle multiple scripts together and have one randomly selected each time a matching page loads. This is useful for A/B testing different versions of a script.
+
+### How groups work
+
+- Each page load picks **one** member script at random and runs it — the others are skipped.
+- The group's own **match patterns** control which URLs it runs on (individual script match patterns are ignored for grouped scripts).
+- Groups support per-site enable/disable just like standalone scripts.
+
+### Creating a group
+
+1. Open the **Options** page.
+2. Scroll to the **Groups** section.
+3. Fill in:
+   - **Group name** – used in the script list.
+   - **Match patterns** – one pattern per line (same format as standalone scripts).
+   - **Group enabled** – uncheck to disable the whole group everywhere.
+4. Click **Save group**.
+
+### Adding scripts to a group
+
+When creating or editing a script, use the **Group** dropdown to assign it to an existing group. Set it to `— None —` to make the script standalone.
+
+> **Note:** When a script belongs to a group, its own match patterns are not used — the group's match patterns take effect instead.
+
+### Deleting a group
+
+Click **Delete** next to a group. Its member scripts become standalone (they are not deleted).
+
+---
+
 ## Summary
 
 - **Load:** `chrome://extensions` → Developer mode → Load unpacked → select this folder.
 - **Allow scripts:** Extension details → Allow User Scripts (or Developer mode on older Chrome).
-- **Manage scripts:** Popup for list and per-site toggles; Options page for adding and editing scripts and match patterns.
+- **Manage scripts:** Popup for list and per-site toggles; Options page for adding and editing scripts, match patterns, and groups.

@@ -156,12 +156,68 @@ h1 {
   margin-top: 2px;
 }
 
-#script-list li a {
+#script-list li a,
+#group-list li a {
   color: #0969da;
   text-decoration: none;
   font-size: 13px;
+  margin-left: 8px;
 }
 
-#script-list li a:hover {
+#script-list li a:hover,
+#group-list li a:hover {
   text-decoration: underline;
+}
+
+#script-list li a.danger,
+#group-list li a.danger {
+  color: #cf222e;
+}
+
+#group-section {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #d0d7de;
+}
+
+#group-section h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#group-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+#group-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+#group-list li .name {
+  font-weight: 500;
+}
+
+#group-list li .matches {
+  font-size: 12px;
+  color: #57606a;
+  margin-top: 2px;
+}
+
+.field select {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background: #fff;
 }
